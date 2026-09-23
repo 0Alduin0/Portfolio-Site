@@ -1,0 +1,8 @@
+# allowlist: only the site itself ships; tooling, briefs and the raw CV stay local
+/*
+!index.html
+!favicon.svg
+!robots.txt
+!sitemap.xml
+!assets
+!vercel.json

@@ -1,0 +1,16 @@
+# local tooling and design-process files, not part of the site
+.claude/
+.impeccable/
+.blender-toolkit/
+PRODUCT.md
+
+# the raw CV stays local; the published copy lives in assets/
+/*.pdf
+
+# vercel cli link
+.vercel/
+
+# os noise
+.DS_Store
+Thumbs.db
+desktop.ini

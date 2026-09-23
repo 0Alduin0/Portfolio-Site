@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muhammet Enes Yürekli · Oyun Geliştirici</title>
+  <meta name="description" content="Unity ve C# ile 2D/3D oyunlar ve multiplayer sistemler geliştiren Bilgisayar Mühendisliği öğrencisi Muhammet Enes Yürekli'nin portföyü. Projeler tarayıcıda canlı çalışır.">
+  <meta name="theme-color" content="#F6F8FA">
+  <link rel="canonical" href="https://enesyurekli.vercel.app/">
+  <link rel="alternate" hreflang="tr" href="https://enesyurekli.vercel.app/">
+  <link rel="alternate" hreflang="en" href="https://enesyurekli.vercel.app/?lang=en">
+  <link rel="alternate" hreflang="x-default" href="https://enesyurekli.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Muhammet Enes Yürekli">
+  <meta property="og:url" content="https://enesyurekli.vercel.app/">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="Muhammet Enes Yürekli · Oyun Geliştirici">
+  <meta property="og:description" content="Unity & C# oyun geliştirici. Projeleri tarayıcıda oynanabilir prototipler olarak görün.">
+  <meta property="og:image" content="https://enesyurekli.vercel.app/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Muhammet Enes Yürekli · Oyun Geliştirici">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://enesyurekli.vercel.app/assets/og-image.png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/archivo-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>
+    (function () {
+      var d = document.documentElement, lang = null;
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        lang = (q === 'en' || q === 'tr') ? q : localStorage.getItem('mey-lang');
+        if (q === 'en') document.querySelector('link[rel=canonical]').href = 'https://enesyurekli.vercel.app/?lang=en';
+      } catch (e) {}
+      if (lang !== 'en' && lang !== 'tr') lang = (navigator.language || 'tr').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en';
+      d.className = 'js';
+      d.setAttribute('data-lang', lang);
+      if (lang === 'en') { d.lang = 'en'; setTimeout(function () { d.classList.add('i18n-ready'); }, 1500); }
+    })();
+  </script>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<symbol id="i-ph-arrow-counter-clockwise" viewBox="0 0 256 256"><path d="M228,128a100,100,0,0,1-98.66,100H128a99.39,99.39,0,0,1-68.62-27.29,12,12,0,0,1,16.48-17.45,76,76,0,1,0-1.57-109c-.13.13-.25.25-.39.37L54.89,92H72a12,12,0,0,1,0,24H24a12,12,0,0,1-12-12V56a12,12,0,0,1,24,0V76.72L57.48,57.06A100,100,0,0,1,228,128Z"/></symbol>
+<symbol id="i-ph-arrow-right" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"/></symbol>
+<symbol id="i-ph-arrow-up-right" viewBox="0 0 256 256"><path d="M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z"/></symbol>
+<symbol id="i-ph-check" viewBox="0 0 256 256"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"/></symbol>
+<symbol id="i-ph-copy" viewBox="0 0 256 256"><path d="M216,28H88A12,12,0,0,0,76,40V76H40A12,12,0,0,0,28,88V216a12,12,0,0,0,12,12H168a12,12,0,0,0,12-12V180h36a12,12,0,0,0,12-12V40A12,12,0,0,0,216,28ZM156,204H52V100H156Zm48-48H180V88a12,12,0,0,0-12-12H100V52H204Z"/></symbol>
+<symbol id="i-ph-cursor-click" viewBox="0 0 256 256"><path d="M224.15,179.17l-46.82-46.82,37.92-13.51c.26-.09.51-.19.76-.3a20,20,0,0,0-1.76-37.27L54.16,29A20,20,0,0,0,29,54.16L81.27,214.24A20,20,0,0,0,118.54,216c.11-.25.21-.5.3-.76l13.51-37.92,46.83,46.82a20,20,0,0,0,28.28,0l16.69-16.68A20,20,0,0,0,224.15,179.17Zm-30.83,25.17-48.48-48.48A20,20,0,0,0,130.7,150a20.47,20.47,0,0,0-3.73.35A20,20,0,0,0,112.35,162c-.11.25-.2.5-.3.76L100.4,195.5,54.29,54.29,195.5,100.4l-32.71,11.65c-.25.09-.51.19-.76.3a20,20,0,0,0-6.16,32.48h0l48.48,48.48ZM84,16V12a12,12,0,0,1,24,0v4a12,12,0,0,1-24,0ZM12,108a12,12,0,0,1,0-24h4a12,12,0,0,1,0,24ZM120.62,24.21l4-12a12,12,0,0,1,22.77,7.58l-4,12a12,12,0,0,1-22.77-7.58Zm-81.23,104a12,12,0,0,1-7.59,15.17l-12,4a12,12,0,1,1-7.59-22.76l12-4A12,12,0,0,1,39.39,128.21Z"/></symbol>
+<symbol id="i-ph-download-simple" viewBox="0 0 256 256"><path d="M228,144v64a12,12,0,0,1-12,12H40a12,12,0,0,1-12-12V144a12,12,0,0,1,24,0v52H204V144a12,12,0,0,1,24,0Zm-108.49,8.49a12,12,0,0,0,17,0l40-40a12,12,0,0,0-17-17L140,115V32a12,12,0,0,0-24,0v83L96.49,95.51a12,12,0,0,0-17,17Z"/></symbol>
+<symbol id="i-ph-envelope-simple" viewBox="0 0 256 256"><path d="M224,44H32A12,12,0,0,0,20,56V192a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V56A12,12,0,0,0,224,44ZM193.15,68,128,127.72,62.85,68ZM44,188V83.28l75.89,69.57a12,12,0,0,0,16.22,0L212,83.28V188Z"/></symbol>
+<symbol id="i-ph-github-logo" viewBox="0 0 256 256"><path d="M212.62,75.17A63.7,63.7,0,0,0,206.39,26,12,12,0,0,0,196,20a63.71,63.71,0,0,0-50,24H126A63.71,63.71,0,0,0,76,20a12,12,0,0,0-10.39,6,63.7,63.7,0,0,0-6.23,49.17A61.5,61.5,0,0,0,52,104v8a60.1,60.1,0,0,0,45.76,58.28A43.66,43.66,0,0,0,92,192v4H76a20,20,0,0,1-20-20,44.05,44.05,0,0,0-44-44,12,12,0,0,0,0,24,20,20,0,0,1,20,20,44.05,44.05,0,0,0,44,44H92v12a12,12,0,0,0,24,0V192a20,20,0,0,1,40,0v40a12,12,0,0,0,24,0V192a43.66,43.66,0,0,0-5.76-21.72A60.1,60.1,0,0,0,220,112v-8A61.5,61.5,0,0,0,212.62,75.17ZM196,112a36,36,0,0,1-36,36H112a36,36,0,0,1-36-36v-8a37.87,37.87,0,0,1,6.13-20.12,11.65,11.65,0,0,0,1.58-11.49,39.9,39.9,0,0,1-.4-27.72,39.87,39.87,0,0,1,26.41,17.8A12,12,0,0,0,119.82,68h32.35a12,12,0,0,0,10.11-5.53,39.84,39.84,0,0,1,26.41-17.8,39.9,39.9,0,0,1-.4,27.72,12,12,0,0,0,1.61,11.53A37.85,37.85,0,0,1,196,104Z"/></symbol>
+<symbol id="i-ph-hand-tap" viewBox="0 0 256 256"><path d="M228,156v36c0,13.85-1.63,26.52-4.58,35.68a12,12,0,1,1-22.84-7.36c2.14-6.65,3.42-17.24,3.42-28.32V156a8,8,0,0,0-16,0v4a12,12,0,0,1-24,0V140a8,8,0,0,0-16,0v12a12,12,0,0,1-24,0V84a8,8,0,0,0-16,0V192a12,12,0,0,1-22.18,6.34l-18.68-30-.21-.34A8,8,0,0,0,53,175.92L78.27,217.8a12,12,0,0,1-20.56,12.39l-25.31-42-.12-.2A32,32,0,0,1,84,150.83V84a32,32,0,0,1,64,0v25a32,32,0,0,1,36.78,17A32,32,0,0,1,228,156ZM56,96A12,12,0,0,0,68,84a48,48,0,0,1,96,0,12,12,0,0,0,24,0A72,72,0,0,0,44,84,12,12,0,0,0,56,96Z"/></symbol>
+<symbol id="i-ph-keyboard" viewBox="0 0 256 256"><path d="M224,44H32A20,20,0,0,0,12,64V192a20,20,0,0,0,20,20H224a20,20,0,0,0,20-20V64A20,20,0,0,0,224,44Zm-4,144H36V68H220ZM52,128a12,12,0,0,1,12-12H192a12,12,0,0,1,0,24H64A12,12,0,0,1,52,128Zm0-36A12,12,0,0,1,64,80H192a12,12,0,0,1,0,24H64A12,12,0,0,1,52,92Zm0,72a12,12,0,0,1,12-12h8a12,12,0,0,1,0,24H64A12,12,0,0,1,52,164Zm108,0a12,12,0,0,1-12,12H108a12,12,0,0,1,0-24h40A12,12,0,0,1,160,164Zm44,0a12,12,0,0,1-12,12h-8a12,12,0,0,1,0-24h8A12,12,0,0,1,204,164Z"/></symbol>
+<symbol id="i-ph-linkedin-logo" viewBox="0 0 256 256"><path d="M216,20H40A20,20,0,0,0,20,40V216a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V40A20,20,0,0,0,216,20Zm-4,192H44V44H212ZM112,176V120a12,12,0,0,1,21.43-7.41A40,40,0,0,1,192,148v28a12,12,0,0,1-24,0V148a16,16,0,0,0-32,0v28a12,12,0,0,1-24,0ZM96,120v56a12,12,0,0,1-24,0V120a12,12,0,0,1,24,0ZM68,80A16,16,0,1,1,84,96,16,16,0,0,1,68,80Z"/></symbol>
+<symbol id="i-ph-pause" viewBox="0 0 256 256"><path d="M200,28H160a20,20,0,0,0-20,20V208a20,20,0,0,0,20,20h40a20,20,0,0,0,20-20V48A20,20,0,0,0,200,28Zm-4,176H164V52h32ZM96,28H56A20,20,0,0,0,36,48V208a20,20,0,0,0,20,20H96a20,20,0,0,0,20-20V48A20,20,0,0,0,96,28ZM92,204H60V52H92Z"/></symbol>
+<symbol id="i-ph-play" viewBox="0 0 256 256"><path d="M234.49,111.07,90.41,22.94A20,20,0,0,0,60,39.87V216.13a20,20,0,0,0,30.41,16.93l144.08-88.13a19.82,19.82,0,0,0,0-33.86ZM84,208.85V47.15L216.16,128Z"/></symbol>
+<symbol id="i-ph-wifi-slash" viewBox="0 0 256 256"><path d="M216.88,207.93a12,12,0,1,1-17.76,16.14L147.78,167.6a56.06,56.06,0,0,0-52.71,7.1,12,12,0,0,1-14.14-19.4,79.35,79.35,0,0,1,41.92-15.12L103.51,118.9a104.18,104.18,0,0,0-40.06,19.55,12,12,0,0,1-14.9-18.81A128.46,128.46,0,0,1,85.61,99.21l-17.31-19a151.14,151.14,0,0,0-36.68,22.28A12,12,0,1,1,16.39,83.91a175.52,175.52,0,0,1,35-22.38L39.12,48.07A12,12,0,1,1,56.88,31.93ZM128,188a16,16,0,1,0,16,16A16,16,0,0,0,128,188Zm64.55-49.55a12,12,0,0,0,14.9-18.81A127.27,127.27,0,0,0,170,99.05a12,12,0,0,0-7.87,22.67A103.62,103.62,0,0,1,192.55,138.45Zm47.06-54.54A176.33,176.33,0,0,0,128,44c-3.94,0-7.93.13-11.86.39a12,12,0,1,0,1.59,24c3.4-.23,6.86-.34,10.27-.34a152.24,152.24,0,0,1,96.38,34.46,12,12,0,1,0,15.23-18.55Z"/></symbol>
+<symbol id="i-si-anthropic" viewBox="0 0 24 24"><path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/></symbol>
+<symbol id="i-si-cisco" viewBox="0 0 24 24"><path d="M16.331 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.186 1.186 0 01-.806-.237 1.038 1.038 0 01-.352-.498 1.21 1.21 0 01-.023-.667c.052-.225.178-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.34 2.34 0 00-.903.206c-.287.132-.54.327-.739.571a2.221 2.221 0 00-.04 2.705c.295.378.709.645 1.175.756.491.12 1.006.102 1.487-.052l.082-.023M5.336 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.183 1.183 0 01-.806-.237 1.03 1.03 0 01-.351-.498 1.202 1.202 0 01-.024-.667c.052-.225.177-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.344 2.344 0 00-.903.206 2.08 2.08 0 00-.74.571 2.224 2.224 0 00-.041 2.705 2.11 2.11 0 001.176.756c.491.12 1.005.102 1.487-.052l.083-.023M9.26 17.249l-.004.957.07.012c.22.041.441.069.664.085.195.019.391.022.587.012.187-.014.372-.049.551-.104.21-.06.405-.163.571-.305a1.16 1.16 0 00.333-.478 1.31 1.31 0 00-.007-.96 1.068 1.068 0 00-.298-.414 1.261 1.261 0 00-.438-.255l-.722-.268a.388.388 0 01-.197-.188.245.245 0 01.008-.219.382.382 0 01.154-.142.798.798 0 01.257-.074c.153-.022.308-.021.46.005.18.02.358.051.533.096l.038.008v-.883l-.069-.015a4.749 4.749 0 00-.543-.097 2.844 2.844 0 00-.714-.003c-.3.027-.585.143-.821.33-.16.126-.281.293-.351.484-.104.29-.105.608 0 .899.054.145.14.274.252.381.097.093.207.173.327.236.157.084.324.149.497.195.057.017.114.035.17.054l.085.031.024.01c.084.03.162.078.226.14.045.042.08.094.101.151a.325.325 0 01.001.161.339.339 0 01-.166.198.856.856 0 01-.275.086 2.032 2.032 0 01-.427.021 5.208 5.208 0 01-.557-.074 9.195 9.195 0 01-.287-.067l-.033-.006zm-2.475.995h1.05v-4.167h-1.05v4.167zm12.162-2.936a1.095 1.095 0 011.541.158 1.094 1.094 0 01-.157 1.541l-.017.014a1.096 1.096 0 01-1.367-1.713m-1.525.854a2.193 2.193 0 002.666 2.107 2.139 2.139 0 00.701-3.937 2.207 2.207 0 00-3.367 1.83M22.961 10.728a.52.52 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M20.117 10.728a.522.522 0 001.041 0V8.139a.521.521 0 00-1.04 0v2.589M17.231 11.771a.521.521 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M14.393 10.728a.521.521 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M11.494 10.728a.522.522 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M8.624 10.728a.52.52 0 001.039 0V8.139a.52.52 0 00-1.039 0v2.589M5.737 11.771a.52.52 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M2.876 10.728a.522.522 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M0 10.728a.521.521 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155"/></symbol>
+<symbol id="i-si-claude" viewBox="0 0 24 24"><path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></symbol>
+<symbol id="i-si-hackerrank" viewBox="0 0 24 24"><path d="M0 0v24h24V0zm9.95 8.002h1.805c.061 0 .111.05.111.111v7.767c0 .061-.05.111-.11.111H9.95c-.061 0-.111-.05-.111-.11v-2.87H7.894v2.87c0 .06-.05.11-.11.11H5.976a.11.11 0 01-.11-.11V8.112c0-.06.05-.11.11-.11h1.806c.061 0 .11.05.11.11v2.869H9.84v-2.87c0-.06.05-.11.11-.11zm2.999 0h5.778c.061 0 .111.05.111.11v7.767a.11.11 0 01-.11.112h-5.78a.11.11 0 01-.11-.11V8.111c0-.06.05-.11.11-.11z"/></symbol>
+<symbol id="i-si-unity" viewBox="0 0 24 24"><path d="m12.9288 4.2939 3.7997 2.1929c.1366.077.1415.2905 0 .3675l-4.515 2.6076a.4192.4192 0 0 1-.4246 0L7.274 6.8543c-.139-.0745-.1415-.293 0-.3675l3.7972-2.193V0L1.3758 5.5977V16.793l3.7177-2.1456v-4.3858c-.0025-.1565.1813-.2682.318-.1838l4.5148 2.6076a.4252.4252 0 0 1 .2136.3676v5.2127c.0025.1565-.1813.2682-.3179.1838l-3.7996-2.1929-3.7178 2.1457L12 24l9.6954-5.5977-3.7178-2.1457-3.7996 2.1929c-.1341.082-.3229-.0248-.3179-.1838V13.053c0-.1565.087-.2956.2136-.3676l4.5149-2.6076c.134-.082.3228.0224.3179.1838v4.3858l3.7177 2.1456V5.5977L12.9288 0Z"/></symbol>
+</svg>
+<a class="skip" href="#main" data-i18n="skip">İçeriğe geç</a>
+
+<header class="bar" id="bar">
+  <div class="bar-in">
+    <a class="mark" href="#top" aria-label="Muhammet Enes Yürekli, sayfanın başı" data-i18n-attr="aria-label:markLabel">
+      <span class="mark-box" aria-hidden="true">E</span>
+      <span class="mark-name">M. Enes Yürekli</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Bölümler" data-i18n-attr="aria-label:navLabel">
+      <a href="#prototipler" data-i18n="navProjects">Projeler</a>
+      <a href="#sistemler" data-i18n="navSystems">Yetenekler</a>
+      <a href="#basarimlar" data-i18n="navAchievements">Başarımlar</a>
+      <a href="#hakkimda" data-i18n="navAbout">Hakkımda</a>
+    </nav>
+    <div class="bar-end">
+      <div class="lang" role="group" aria-label="Dil" data-i18n-attr="aria-label:langLabel">
+        <button type="button" class="lang-btn" data-lang="tr" aria-pressed="true" lang="tr">TR</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" lang="en">EN</button>
+      </div>
+      <a class="btn btn--ink btn--sm bar-cta" href="#iletisim" data-i18n="ctaContact">İletişime geç</a>
+      <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">
+        <span class="menu-lines" aria-hidden="true"></span>
+        <span class="sr" data-i18n="menu">Menü</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero: the level sketch -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <canvas class="runner-canvas" id="runner" aria-hidden="true"></canvas>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 class="hero-title" id="hero-title">
+          <span class="hero-line" data-solid>Muhammet Enes</span>
+          <span class="hero-line" data-solid>Yürekli</span>
+        </h1>
+        <p class="hero-role" data-i18n-html="heroRole"><span class="hl-run">Oyun geliştirici</span>, Bilgisayar Mühendisliği 4. sınıf</p>
+        <p class="hero-pitch" data-i18n="heroPitch">Unity ve C# ile 2D/3D oyunlar ve multiplayer sistemler kuruyorum. Arkasındaki backend'i ve otomasyonu da ben yazıyorum.</p>
+        <div class="hero-cta">
+          <a class="btn btn--hl" href="#prototipler" data-solid>
+            <span data-i18n="ctaPlay">Projeleri oyna</span>
+            <svg class="i" aria-hidden="true"><use href="#i-ph-arrow-right"/></svg>
+          </a>
+          <a class="btn btn--ink" href="#iletisim" data-solid data-i18n="ctaContact">İletişime geç</a>
+        </div>
+      </div>
+      <div class="hero-level" id="hero-level">
+        <div class="level-hud" aria-live="polite">
+          <button type="button" class="chip-btn" id="runner-take" aria-pressed="false">
+            <svg class="i" aria-hidden="true"><use href="#i-ph-keyboard"/></svg>
+            <span data-i18n="runnerTake">Kontrolü al</span>
+          </button>
+          <p class="level-hint" id="runner-hint" data-i18n-html="runnerHint"><kbd>←</kbd> <kbd>→</kbd> koş, <kbd>Boşluk</kbd> zıpla</p>
+          <p class="level-score"><span data-i18n="runnerCoins">Parça</span> <b id="runner-coins">0/5</b></p>
+          <a class="chip-btn level-next" href="#prototipler"><span data-i18n="levelNext">Sonraki seviye: projeler</span><svg class="i i-down" aria-hidden="true"><use href="#i-ph-arrow-right"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section protos" id="prototipler" aria-labelledby="protos-title">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 id="protos-title" data-i18n="protosTitle">Üç proje, üçü de bu sayfada çalışıyor.</h2>
+        <p class="lede" data-i18n="protosLede">Her kart, projenin çekirdek mekaniğini tarayıcı için yeniden yazılmış haliyle çalıştırır. Kullandığı veriler örnektir.</p>
+      </header>
+
+      <!-- Fruit Merge -->
+      <article class="proto proto--merge sheet" id="fruit-merge" aria-labelledby="fm-title">
+        <div class="proto-demo">
+          <figure class="demo demo--merge" data-demo="merge">
+            <canvas tabindex="0" role="application" aria-roledescription="oyun" aria-label="Fruit Merge demosu. Sol ve sağ ok tuşlarıyla meyveyi taşı, boşluk ya da Enter ile bırak." data-i18n-attr="aria-label:fmCanvas;aria-roledescription:roleGame"></canvas>
+            <figcaption class="demo-bar">
+              <button type="button" class="demo-toggle" aria-pressed="false">
+                <svg class="i i-pause" aria-hidden="true"><use href="#i-ph-pause"/></svg>
+                <svg class="i i-play" aria-hidden="true"><use href="#i-ph-play"/></svg>
+                <span class="sr demo-toggle-label" data-i18n="pause">Duraklat</span>
+              </button>
+              <span class="demo-hint" data-i18n="fmHint">Tıkla ya da dokun: meyveyi bırak. Aynı iki meyve birleşir.</span>
+              <span class="demo-stat"><span data-i18n="best">En iyi</span> <b class="num" data-stat="best">0</b></span>
+              <span class="demo-stat"><span data-i18n="score">Skor</span> <b class="num" data-stat="score">0</b></span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="proto-body">
+          <h3 class="proto-title" id="fm-title">Fruit Merge</h3>
+          <p class="proto-kind" data-i18n="fmKind">2D casual puzzle oyunu</p>
+          <p data-i18n="fmDesc">Benzer meyveleri birleştirerek puan kazanılan bir puzzle. Çarpışma mekaniğini Unity 2D Physics ile, skor sistemini C# ile kurdum; arayüzü mobil için optimize ettim.</p>
+          <dl class="titleblock">
+            <div><dt data-i18n="tbEngine">Motor</dt><dd>Unity 2D Physics</dd></div>
+            <div><dt data-i18n="tbLang">Dil</dt><dd>C#</dd></div>
+            <div><dt data-i18n="tbPlatform">Platform</dt><dd data-i18n="fmPlatform">Mobil</dd></div>
+            <div><dt data-i18n="tbSource">Kaynak</dt><dd><a href="https://github.com/0Alduin0/FruitMerge-Game" rel="noopener" target="_blank">0Alduin0/FruitMerge-Game</a></dd></div>
+          </dl>
+          <p class="proto-note" data-i18n="fmNote">Bu kart tarayıcı için yeniden yazıldı (verlet fizik). Orijinal oyun Unity'de.</p>
+          <a class="link-arrow" href="https://github.com/0Alduin0/FruitMerge-Game" rel="noopener" target="_blank">
+            <svg class="i" aria-hidden="true"><use href="#i-ph-github-logo"/></svg>
+            <span data-i18n="viewGithub">GitHub'da incele</span>
+            <svg class="i" aria-hidden="true"><use href="#i-ph-arrow-up-right"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Can Bağı -->
+      <article class="proto proto--mesh sheet" id="can-bagi" aria-labelledby="cb-title">
+        <div class="proto-head">
+          <div>
+            <h3 class="proto-title" id="cb-title">Can Bağı</h3>
+            <p class="proto-kind" data-i18n="cbKind">Afet haberleşme sistemi</p>
+          </div>
+          <p class="award"><mark class="hl" data-i18n="cbAward">EBST Hackathon 2026 birincisi, 17 takım arasında</mark></p>
+        </div>
+        <div class="mesh-stage">
+          <figure class="demo demo--mesh" data-demo="mesh">
+            <canvas tabindex="0" role="application" aria-roledescription="simülasyon" aria-label="Can Bağı mesh ağı simülasyonu. Haritaya tıklayınca SOS gönderilir, bir düğüme tıklayınca düğüm devre dışı kalır." data-i18n-attr="aria-label:cbCanvas;aria-roledescription:roleSim"></canvas>
+            <figcaption class="demo-bar">
+              <button type="button" class="demo-toggle" aria-pressed="false">
+                <svg class="i i-pause" aria-hidden="true"><use href="#i-ph-pause"/></svg>
+                <svg class="i i-play" aria-hidden="true"><use href="#i-ph-play"/></svg>
+                <span class="sr demo-toggle-label" data-i18n="pause">Duraklat</span>
+              </button>
+              <span class="demo-hint" data-i18n="cbHint">Haritaya tıkla: SOS gönder. Bir düğüme tıkla: devre dışı bırak, ağ yeni yol bulsun.</span>
+              <span class="demo-stat"><span data-i18n="cbRescued">Ulaşılan</span> <b class="num" data-stat="rescued">0</b></span>
+            </figcaption>
+          </figure>
+          <aside class="mesh-log" aria-label="Sunucu olay akışı (örnek)" data-i18n-attr="aria-label:cbLogLabel">
+            <p class="mesh-log-title"><span data-i18n="cbLogTitle">WebSocket akışı</span> <span class="tag" data-i18n="sample">örnek veri</span></p>
+            <ol class="mesh-log-list" id="mesh-log"></ol>
+          </aside>
+        </div>
+        <div class="proto-cols">
+          <p class="proto-desc" data-i18n="cbDesc">Deprem anında GSM ve internet çöktüğünde, ESP32 mesh ağı üzerinden SOS ve koordinasyon sağlayan bir afet sistemi. Backend'i geliştirdim: FastAPI ve SQLite ile REST API, WebSocket ile anlık veri iletimi, Groq AI (Llama 3.3) ile aciliyet skorlaması, Haversine algoritmasıyla gönüllü eşleştirme ve JWT tabanlı üç katmanlı rol sistemi.</p>
+          <dl class="titleblock titleblock--grid">
+            <div><dt data-i18n="tbRole">Rolüm</dt><dd>Backend</dd></div>
+            <div><dt data-i18n="tbApi">API</dt><dd>FastAPI, SQLite, WebSocket</dd></div>
+            <div><dt data-i18n="tbAi">Yapay zeka</dt><dd>Groq (Llama 3.3)</dd></div>
+            <div><dt data-i18n="tbAuth">Yetki</dt><dd data-i18n="cbAuth">JWT, 3 katmanlı rol</dd></div>
+            <div><dt data-i18n="tbHardware">Donanım</dt><dd data-i18n="cbHardware">ESP32 mesh, pyserial köprüsü</dd></div>
+            <div><dt data-i18n="tbClients">İstemciler</dt><dd>React dashboard, Flutter</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <!-- Donanım Arşivi -->
+      <article class="proto proto--pipe sheet" id="donanim-arsivi" aria-labelledby="da-title">
+        <div class="proto-body">
+          <h3 class="proto-title" id="da-title">Donanım Arşivi</h3>
+          <p class="proto-kind" data-i18n="daKind">Fırsat takipçisi, serverless bot</p>
+          <p data-i18n="daDesc">Donanimarsivi.com'un Sıcak Fırsatlar bölümünü izler; takip listesindeki bir donanımda indirim çıkınca WhatsApp'a bildirim gönderir. Forum scraping BeautifulSoup ile, bildirimler CallMeBot API ile. GitHub Actions her 10 dakikada bir tetikliyor, maliyeti sıfır.</p>
+          <dl class="titleblock">
+            <div><dt data-i18n="tbTrigger">Tetik</dt><dd data-i18n="daTrigger">GitHub Actions cron, 10 dk</dd></div>
+            <div><dt data-i18n="tbScrape">Scraping</dt><dd>Python, BeautifulSoup</dd></div>
+            <div><dt data-i18n="tbNotify">Bildirim</dt><dd>CallMeBot, WhatsApp</dd></div>
+            <div><dt data-i18n="tbSource">Kaynak</dt><dd><a href="https://github.com/0Alduin0/donanim-arsiv" rel="noopener" target="_blank">0Alduin0/donanim-arsiv</a></dd></div>
+          </dl>
+          <a class="link-arrow" href="https://github.com/0Alduin0/donanim-arsiv" rel="noopener" target="_blank">
+            <svg class="i" aria-hidden="true"><use href="#i-ph-github-logo"/></svg>
+            <span data-i18n="viewGithub">GitHub'da incele</span>
+            <svg class="i" aria-hidden="true"><use href="#i-ph-arrow-up-right"/></svg>
+          </a>
+        </div>
+        <div class="proto-demo">
+          <figure class="demo demo--pipe" data-demo="pipeline">
+            <canvas role="img" aria-label="Donanım Arşivi pipeline simülasyonu: zamanlayıcı her 10 dakikada botu çalıştırır, eşleşen fırsatlar WhatsApp bildirimi olur." data-i18n-attr="aria-label:daCanvas"></canvas>
+            <div class="pipe-controls">
+              <div class="watch" role="group" aria-labelledby="watch-label">
+                <span class="watch-label" id="watch-label" data-i18n="daWatch">Takip listesi</span>
+                <button type="button" class="watch-chip" data-watch="rtx" aria-pressed="true">RTX 4070</button>
+                <button type="button" class="watch-chip" data-watch="x3d" aria-pressed="true">7800X3D</button>
+                <button type="button" class="watch-chip" data-watch="ssd" aria-pressed="false">NVMe SSD</button>
+                <button type="button" class="watch-chip" data-watch="ram" aria-pressed="false">DDR5</button>
+                <button type="button" class="watch-chip" data-watch="mon" aria-pressed="false" data-i18n="daMonitor">Monitör</button>
+              </div>
+              <button type="button" class="btn btn--ink btn--sm" id="pipe-dispatch">
+                <svg class="i" aria-hidden="true"><use href="#i-ph-play"/></svg>
+                <span data-i18n="daDispatch">Şimdi çalıştır</span>
+              </button>
+            </div>
+            <figcaption class="demo-bar">
+              <button type="button" class="demo-toggle" aria-pressed="false">
+                <svg class="i i-pause" aria-hidden="true"><use href="#i-ph-pause"/></svg>
+                <svg class="i i-play" aria-hidden="true"><use href="#i-ph-play"/></svg>
+                <span class="sr demo-toggle-label" data-i18n="pause">Duraklat</span>
+              </button>
+              <span class="demo-hint" data-i18n="daHint">Takip listesini değiştir, bir sonraki çalışmada bildirimler ona göre gelsin.</span>
+              <span class="demo-stat"><span data-i18n="daCost">Maliyet</span> <b class="num">0,00 ₺</b></span>
+            </figcaption>
+          </figure>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Systems / skills -->
+  <section class="section systems" id="sistemler" aria-labelledby="sys-title">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 id="sys-title" data-i18n="sysTitle">Oyunu da, arkasındaki sistemi de kuruyorum.</h2>
+      </header>
+      <div class="bento">
+        <article class="cell cell--game sheet" aria-labelledby="sk-game">
+          <div class="cell-text">
+            <h3 id="sk-game" data-i18n="skGame">Oyun geliştirme</h3>
+            <p data-i18n="skGameDesc">Unity ve C# ile mobil ve masaüstü için 2D/3D oyunlar. Photon ve Netcode for GameObjects ile multiplayer, fizik ve animasyon sistemleri.</p>
+            <ul class="tags">
+              <li>Unity</li><li>C#</li><li data-i18n="tag2d3d">2D/3D oyun</li><li>Photon</li><li>Netcode for GameObjects</li><li data-i18n="tagPhysics">Fizik sistemi</li><li data-i18n="tagAnim">Animasyon sistemi</li><li data-i18n="tagPublish">Mobil ve masaüstü yayın</li>
+            </ul>
+          </div>
+          <figure class="demo demo--net" data-demo="netcode">
+            <canvas tabindex="0" role="application" aria-roledescription="simülasyon" aria-label="Multiplayer interpolasyon demosu. Sol panelde imleci ya da ok tuşlarını kullanarak topu hareket ettir, sağ panel ağ üzerinden gelen görüntüyü gösterir." data-i18n-attr="aria-label:netCanvas;aria-roledescription:roleSim"></canvas>
+            <div class="net-controls">
+              <label class="slider">
+                <span><span data-i18n="netLatency">Gecikme</span> <b class="num" id="net-lat-out">120 ms</b></span>
+                <input type="range" id="net-lat" min="0" max="400" step="10" value="120">
+              </label>
+              <label class="switch">
+                <input type="checkbox" id="net-interp" checked>
+                <span class="switch-box" aria-hidden="true"></span>
+                <span data-i18n="netInterp">İnterpolasyon</span>
+              </label>
+            </div>
+            <figcaption class="demo-bar">
+              <button type="button" class="demo-toggle" aria-pressed="false">
+                <svg class="i i-pause" aria-hidden="true"><use href="#i-ph-pause"/></svg>
+                <svg class="i i-play" aria-hidden="true"><use href="#i-ph-play"/></svg>
+                <span class="sr demo-toggle-label" data-i18n="pause">Duraklat</span>
+              </button>
+              <span class="demo-hint" data-i18n="netHint">Kavram demosu: aynı top, iki istemci. Gecikmeyi artır, interpolasyonu kapat, farkı gör.</span>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="cell cell--backend sheet" aria-labelledby="sk-back">
+          <h3 id="sk-back">Backend</h3>
+          <p data-i18n="skBackDesc">FastAPI ve SQLite ile RESTful API tasarımı, JWT tabanlı kimlik doğrulama, WebSocket ve yapay zeka servis entegrasyonları.</p>
+          <ul class="tags">
+            <li>Python</li><li>FastAPI</li><li>SQLite</li><li>SQLAlchemy</li><li>REST</li><li>JWT (python-jose)</li><li>bcrypt</li><li>WebSocket</li><li>Uvicorn</li><li>Swagger UI</li><li>Groq API</li><li>Claude API</li><li>MCP</li><li>pyserial</li>
+          </ul>
+        </article>
+
+        <article class="cell cell--auto sheet" aria-labelledby="sk-auto">
+          <h3 id="sk-auto" data-i18n="skAuto">Otomasyon ve veri toplama</h3>
+          <p data-i18n="skAutoDesc">Anti-bot korumalı sitelerde web scraping ve GitHub Actions üzerinde sıfır maliyetli serverless pipeline'lar.</p>
+          <ul class="tags">
+            <li>Selenium</li><li>BeautifulSoup</li><li>Cloudscraper</li><li>GitHub Actions</li><li>Serverless</li>
+          </ul>
+        </article>
+
+        <article class="cell cell--front sheet" aria-labelledby="sk-front">
+          <h3 id="sk-front">Frontend</h3>
+          <p data-i18n="skFrontDesc">Performanslı, animasyon destekli ve her ekrana uyan web arayüzleri.</p>
+          <ul class="tags">
+            <li>React</li><li>Vite</li><li>Tailwind CSS</li><li>Shadcn UI</li><li>Framer Motion</li><li>Firebase</li><li>Lottie</li>
+          </ul>
+        </article>
+      </div>
+      <p class="tools"><span class="tools-label" data-i18n="skTools">Araçlar</span> Git, GitHub, Visual Studio, VS Code, Cursor, JetBrains, Postman</p>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section class="section achievements" id="basarimlar" aria-labelledby="ach-title">
+    <div class="wrap ach-layout">
+      <header class="section-head">
+        <h2 id="ach-title" data-i18n="achTitle">Açılan başarımlar</h2>
+        <p class="lede" data-i18n="achLede">Bir hackathon birinciliği ve yedi sertifika, açıldıkları sırayla.</p>
+      </header>
+      <div class="ledger sheet">
+        <div class="ledger-lead ach">
+          <span class="ach-icon" aria-hidden="true"><svg class="i"><use href="#i-ph-check"/></svg></span>
+          <div>
+            <p class="ach-title" data-i18n="achHack">EBST Hackathon 2026 birinciliği</p>
+            <p class="ach-meta" data-i18n="achHackMeta">Can Bağı, 17 takım arasında</p>
+          </div>
+          <p class="ach-date"><time datetime="2026">2026</time></p>
+        </div>
+        <table class="ledger-table">
+          <thead>
+            <tr><th scope="col" data-i18n="thDate">Tarih</th><th scope="col" data-i18n="thCert">Sertifika</th><th scope="col" data-i18n="thIssuer">Veren</th></tr>
+          </thead>
+          <tbody>
+            <tr class="ach"><td class="c-date"><time datetime="2025-05">05.2025</time></td><td class="c-title"><span class="ach-icon" aria-hidden="true"><svg class="i"><use href="#i-si-unity"/></svg></span>Unity Essentials</td><td class="c-issuer">Unity</td></tr>
+            <tr class="ach"><td class="c-date"><time datetime="2025-05">05.2025</time></td><td class="c-title"><span class="ach-icon" aria-hidden="true"><svg class="i"><use href="#i-si-hackerrank"/></svg></span>Python (Basic)</td><td class="c-issuer">HackerRank</td></tr>
+            <tr class="ach"><td class="c-date"><time datetime="2026-04">04.2026</time></td><td class="c-title"><span class="ach-icon" aria-hidden="true"><svg class="i"><use href="#i-si-cisco"/></svg></span>CCNA: Introduction to Networks</td><td class="c-issuer">Cisco</td></tr>
+            <tr class="ach"><td class="c-date"><time datetime="2026-05">05.2026</time></td><td class="c-title"><span class="ach-icon" aria-hidden="true"><svg class="i"><use href="#i-si-unity"/></svg></span>Unity Junior Programmer</td><td class="c-issuer">Unity</td></tr>
+            <tr class="ach"><td class="c-date"><time datetime="2026-05">05.2026</time></td><td class="c-title"><span class="ach-icon" aria-hidden="true"><svg class="i"><use href="#i-si-hackerrank"/></svg></span>Software Engineer</td><td class="c-issuer">HackerRank</td></tr>
+            <tr class="ach"><td class="c-date"><time datetime="2026-05">05.2026</time></td><td class="c-title"><span class="ach-icon" aria-hidden="true"><svg class="i"><use href="#i-si-anthropic"/></svg></span>Introduction to Subagents</td><td class="c-issuer">Anthropic</td></tr>
+            <tr class="ach"><td class="c-date"><time datetime="2026-05">05.2026</time></td><td class="c-title"><span class="ach-icon" aria-hidden="true"><svg class="i"><use href="#i-si-anthropic"/></svg></span>Claude Code in Action</td><td class="c-issuer">Anthropic</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section about" id="hakkimda" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <div class="about-text">
+        <h2 id="about-title" data-i18n="aboutTitle">Hakkımda</h2>
+        <p class="about-big" data-i18n="aboutP1">Balıkesir Üniversitesi'nde Bilgisayar Mühendisliği 4. sınıf öğrencisiyim. Asıl işim oyun: Unity ve C# ile mobil ve masaüstü için 2D/3D oyunlar geliştiriyor, Photon ve Netcode for GameObjects ile multiplayer sistemler kuruyorum.</p>
+        <p data-i18n="aboutP2">Oyunun dışında kalan her şeyi de yazıyorum: FastAPI ile API'ler, GitHub Actions ile sıfır maliyetli otomasyonlar, React ile animasyonlu arayüzler. Temiz kod yazmayı, gerçek problemleri çözmeyi ve her projede kendimi geliştirmeyi öncelik sayıyorum.</p>
+      </div>
+      <div class="about-side">
+        <h3 class="side-title" data-i18n="eduTitle">Eğitim</h3>
+        <ol class="edu">
+          <li>
+            <p class="edu-years">2023-2027</p>
+            <p class="edu-school" data-i18n="eduUni">Balıkesir Üniversitesi</p>
+            <p class="edu-dept" data-i18n="eduUniDept">Bilgisayar Mühendisliği, 4. sınıf</p>
+          </li>
+          <li>
+            <p class="edu-years">2018-2022</p>
+            <p class="edu-school">Şehit Velit Bekdaş Anadolu Lisesi</p>
+          </li>
+        </ol>
+        <p class="based"><span data-i18n="basedIn">Konum</span> <b data-i18n="basedCity">Balıkesir, Türkiye</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact" id="iletisim" aria-labelledby="contact-title">
+    <div class="wrap contact-in">
+      <h2 id="contact-title" data-i18n="contactTitle">Staj ve junior rollere açığım.</h2>
+      <p class="lede" data-i18n="contactLede">Bir oyun ya da onu ayakta tutan sistem üzerinde çalışıyorsanız, konuşalım.</p>
+      <div class="mail-row">
+        <a class="mail" href="mailto:muhammedenesyurekli@gmail.com">muhammedenesyurekli@gmail.com</a>
+        <button type="button" class="chip-btn copy-btn" id="copy-mail" data-copy="muhammedenesyurekli@gmail.com">
+          <svg class="i i-copy" aria-hidden="true"><use href="#i-ph-copy"/></svg>
+          <svg class="i i-done" aria-hidden="true"><use href="#i-ph-check"/></svg>
+          <span class="copy-label" data-i18n="copy">Kopyala</span>
+        </button>
+      </div>
+      <ul class="elsewhere">
+        <li><a class="btn btn--ink" href="https://github.com/0Alduin0" rel="noopener" target="_blank"><svg class="i" aria-hidden="true"><use href="#i-ph-github-logo"/></svg>GitHub</a></li>
+        <li><a class="btn btn--ink" href="https://www.linkedin.com/in/enes-y%C3%BCrekli" rel="noopener" target="_blank"><svg class="i" aria-hidden="true"><use href="#i-ph-linkedin-logo"/></svg>LinkedIn</a></li>
+        <li><a class="btn btn--ink" href="assets/muhammet-enes-yurekli-cv.pdf" download><svg class="i" aria-hidden="true"><use href="#i-ph-download-simple"/></svg><span data-i18n="cvDownload">CV indir (PDF)</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p>© 2026 Muhammet Enes Yürekli</p>
+    <p data-i18n="footNote">Bu sayfadaki bütün demolar HTML canvas üzerinde, kütüphanesiz çalışır.</p>
+  </div>
+</footer>
+
+<script src="assets/js/i18n.js" defer></script>
+<script src="assets/js/ink.js" defer></script>
+<script src="assets/js/demo.js" defer></script>
+<script src="assets/js/demos/runner.js" defer></script>
+<script src="assets/js/demos/merge.js" defer></script>
+<script src="assets/js/demos/mesh.js" defer></script>
+<script src="assets/js/demos/pipeline.js" defer></script>
+<script src="assets/js/demos/netcode.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
