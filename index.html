@@ -132,9 +132,86 @@
   <section class="section protos" id="prototipler" aria-labelledby="protos-title">
     <div class="wrap">
       <header class="section-head">
-        <h2 id="protos-title" data-i18n="protosTitle">Üç proje, üçü de bu sayfada çalışıyor.</h2>
-        <p class="lede" data-i18n="protosLede">Her kart, projenin çekirdek mekaniğini tarayıcı için yeniden yazılmış haliyle çalıştırır. Kullandığı veriler örnektir.</p>
+        <h2 id="protos-title" data-i18n="protosTitle">Dört proje, dördü de bu sayfada çalışıyor.</h2>
+        <p class="lede" data-i18n="protosLede">Her kart, projenin çekirdek mekaniğini tarayıcı için yeniden yazılmış haliyle çalıştırır. Örnek veri kullanan kartlar bunu belirtir.</p>
       </header>
+
+      <!-- Crystal Clutch -->
+      <article class="proto proto--crystal sheet" id="crystal-clutch" aria-labelledby="cc-title">
+        <div class="proto-head">
+          <div>
+            <h3 class="proto-title" id="cc-title">Crystal Clutch</h3>
+            <p class="proto-kind" data-i18n="ccKind">Mobil match-3 oyunu, Unity 6</p>
+          </div>
+          <p class="award"><mark class="hl" data-i18n="ccClaim">100 level, hiçbiri elle yerleştirilmedi</mark></p>
+        </div>
+        <div class="cc-stage">
+          <figure class="demo demo--crystal" data-demo="crystal">
+            <canvas tabindex="0" role="application" aria-roledescription="oyun" aria-label="Crystal Clutch demosu. Ok tuşlarıyla bir kristal seç, Enter ile tut, sonra ok tuşuyla komşusuyla yer değiştir." data-i18n-attr="aria-label:ccCanvas;aria-roledescription:roleGame"></canvas>
+            <div class="cc-controls">
+              <div class="watch" role="group" aria-labelledby="cc-level-label">
+                <span class="watch-label" id="cc-level-label">Level</span>
+                <button type="button" class="watch-chip" data-level="24" aria-pressed="true" data-i18n="ccL24">24 · orta</button>
+                <button type="button" class="watch-chip" data-level="25" aria-pressed="false" data-i18n="ccL25">25 · zor</button>
+                <button type="button" class="watch-chip" data-level="26" aria-pressed="false" data-i18n="ccL26">26 · nefes</button>
+              </div>
+              <button type="button" class="chip-btn cc-restart">
+                <svg class="i" aria-hidden="true"><use href="#i-ph-arrow-counter-clockwise"/></svg>
+                <span data-i18n="ccReset">Baştan</span>
+              </button>
+            </div>
+            <figcaption class="demo-bar">
+              <button type="button" class="demo-toggle" aria-pressed="false">
+                <svg class="i i-pause" aria-hidden="true"><use href="#i-ph-pause"/></svg>
+                <svg class="i i-play" aria-hidden="true"><use href="#i-ph-play"/></svg>
+                <span class="sr demo-toggle-label" data-i18n="pause">Duraklat</span>
+              </button>
+              <span class="demo-hint" data-i18n="ccHint">Kristali komşusuna sürükle ya da iki komşuya sırayla dokun.</span>
+              <span class="demo-stat"><span data-i18n="ccMoves">Hamle</span> <b class="num" data-stat="moves">0/14</b></span>
+              <span class="demo-stat"><span data-i18n="ccLeft">Engel</span> <b class="num" data-stat="left">0</b></span>
+            </figcaption>
+          </figure>
+          <aside class="lab" aria-labelledby="lab-title">
+            <p class="lab-head"><span id="lab-title">Level Lab</span> <span class="tag" data-i18n="labTag">tarayıcında ölçülüyor</span></p>
+            <div class="lab-plot">
+              <canvas class="lab-canvas" role="img" aria-label="Level Lab grafiği: Ortalama bot seçili leveli yüzlerce kez oynar. Kazanma oranı hamle sayısına göre çizilir, levelin hamle limiti ve tasarım hedefiyle karşılaştırılır." data-i18n-attr="aria-label:labCanvas"></canvas>
+            </div>
+            <dl class="titleblock titleblock--grid lab-read">
+              <div><dt data-i18n="labRuns">Oynanan oyun</dt><dd class="num" data-lab="runs">0 / 200</dd></div>
+              <div><dt data-i18n="labAt">Limitte kazanma</dt><dd class="num" data-lab="rate">–</dd></div>
+              <div><dt data-i18n="labGoal">Tasarım hedefi</dt><dd class="num" data-lab="goal">%78 (orta)</dd></div>
+            </dl>
+            <p class="sr lab-sr" aria-live="polite"></p>
+          </aside>
+        </div>
+        <div class="proto-cols">
+          <div class="proto-desc">
+            <p data-i18n="ccDesc">Kazanılan her levelin bir ejderha yumurtası getirdiği mobil bir match-3 oyunu. 100 level, özel kristaller ve kombolar, dört engel türü, power-up marketi, günlük hediye ve Unity Gaming Services üzerinde çevrimiçi skor tablosu var. Yumurtalar ayrı bir 3D sahnede ejderhayı yumurtadan yaşlılığa, 7 aşamada büyütüyor.</p>
+            <p data-i18n="ccDesc2">Levellerin hiçbirini elle yerleştirmedim. Oyun kurallarının Unity'siz bir kopyasını insan gibi oynayan bir bot binlerce kez oynadı; her level, botun kazanma oranı hedefine oturana kadar ayarlandı. Zorluk testere dişi gibi ilerliyor: her 5. level zor, ardından bir nefes leveli geliyor. Level Lab grafiği aynı ölçümü şu an tarayıcında yapıyor.</p>
+            <p class="proto-note" data-i18n="ccNote">Bu kart tarayıcı için yeniden yazıldı. Kurallar LabBoard.cs ve LabBot.cs'ten birebir alındı, leveller repodaki dosyalar. Orijinal oyun Unity'de.</p>
+            <div class="cc-links">
+              <a class="link-arrow" href="https://github.com/0Alduin0/crystal-clutch" rel="noopener" target="_blank">
+                <svg class="i" aria-hidden="true"><use href="#i-ph-github-logo"/></svg>
+                <span data-i18n="viewGithub">GitHub'da incele</span>
+                <svg class="i" aria-hidden="true"><use href="#i-ph-arrow-up-right"/></svg>
+              </a>
+              <a class="link-arrow" href="https://github.com/0Alduin0/crystal-clutch/releases/latest" rel="noopener" target="_blank">
+                <svg class="i" aria-hidden="true"><use href="#i-ph-download-simple"/></svg>
+                <span data-i18n="ccApk">APK indir (Android)</span>
+                <svg class="i" aria-hidden="true"><use href="#i-ph-arrow-up-right"/></svg>
+              </a>
+            </div>
+          </div>
+          <dl class="titleblock titleblock--grid">
+            <div><dt data-i18n="tbEngine">Motor</dt><dd>Unity 6, URP</dd></div>
+            <div><dt data-i18n="tbLang">Dil</dt><dd>C#</dd></div>
+            <div><dt data-i18n="tbPlatform">Platform</dt><dd>Android</dd></div>
+            <div><dt data-i18n="tbLevels">Leveller</dt><dd data-i18n="ccLevelsVal">Prosedürel, bot doğrulamalı</dd></div>
+            <div><dt data-i18n="tbBoard">Skor tablosu</dt><dd>Unity Gaming Services</dd></div>
+            <div><dt data-i18n="tbSource">Kaynak</dt><dd><a href="https://github.com/0Alduin0/crystal-clutch" rel="noopener" target="_blank">0Alduin0/crystal-clutch</a></dd></div>
+          </dl>
+        </div>
+      </article>
 
       <!-- Fruit Merge -->
       <article class="proto proto--merge sheet" id="fruit-merge" aria-labelledby="fm-title">
@@ -421,6 +498,8 @@
 <script src="assets/js/i18n.js" defer></script>
 <script src="assets/js/ink.js" defer></script>
 <script src="assets/js/demo.js" defer></script>
+<script src="assets/js/demos/crystal-rules.js" defer></script>
+<script src="assets/js/demos/crystal.js" defer></script>
 <script src="assets/js/demos/runner.js" defer></script>
 <script src="assets/js/demos/merge.js" defer></script>
 <script src="assets/js/demos/mesh.js" defer></script>

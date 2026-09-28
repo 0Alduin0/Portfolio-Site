@@ -38,7 +38,7 @@
     document.addEventListener('mey:lang', function () { if (self.impl.lang) self.impl.lang(); self.draw(); });
 
     if (this.toggle) {
-      this.toggle.addEventListener('click', function () { self.setPaused(!self.paused); });
+      this.toggle.addEventListener('click', function () { self.userPaused = !self.paused; self.setPaused(!self.paused); });
     }
 
     if (!opts.noPointer) {
@@ -84,6 +84,7 @@
     if (!w || !h) return;
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     if (w === this.w && h === this.h && dpr === this.dpr) return;
+    var first = !this.w;
     this.w = w; this.h = h; this.dpr = dpr;
     this.canvas.width = Math.round(w * dpr);
     this.canvas.height = Math.round(h * dpr);
@@ -94,6 +95,7 @@
       this.warmed = true;
     }
     this.draw();
+    if (first) this.kick();
   };
 
   Host.prototype.setPaused = function (p) {
@@ -114,7 +116,10 @@
   };
 
   Host.prototype.kick = function () {
-    var should = this.visible && !this.paused && !document.hidden && this.w > 0;
+    var onScreen = this.visible && !document.hidden && this.w > 0;
+    var should = onScreen && !this.paused;
+    // background work a demo owns (a worker, say) follows the same on-screen rule as the loop
+    if (this.impl.active) this.impl.active(onScreen, this.paused, !!this.userPaused);
     if (should && !this.running) {
       this.running = true;
       this.last = performance.now();

@@ -642,7 +642,7 @@ kbd {
   border: 1px solid var(--ink);
   background: var(--paper-hi);
 }
-.mesh-log-title {
+.mesh-log-title, .lab-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -655,7 +655,7 @@ kbd {
   text-transform: uppercase;
   border-bottom: 1px solid var(--ink);
 }
-.mesh-log-title .tag { text-transform: none; letter-spacing: 0.02em; }
+.mesh-log-title .tag, .lab-head .tag { text-transform: none; letter-spacing: 0.02em; }
 .mesh-log-list {
   flex: 1;
   overflow: hidden;
@@ -698,10 +698,11 @@ kbd {
   margin-top: 40px;
 }
 .proto-desc { grid-column: 1 / span 6; max-width: 60ch; }
-.proto--mesh .titleblock { grid-column: 7 / span 6; margin-top: 0; }
+.proto-desc > p + p { margin-top: 16px; }
+.proto--mesh .titleblock, .proto--crystal .proto-cols > .titleblock { grid-column: 7 / span 6; margin-top: 0; align-self: start; }
 .titleblock--grid { grid-template-columns: repeat(3, 1fr); }
 
-.pipe-controls {
+.pipe-controls, .cc-controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -736,6 +737,31 @@ kbd {
 .watch-chip[aria-pressed="true"] { background: var(--hl); color: var(--ink); }
 .watch-chip:hover { color: var(--ink); background: var(--paper); }
 .watch-chip[aria-pressed="true"]:hover { background: var(--hl); }
+
+/* Crystal Clutch: the board, and Level Lab measuring it */
+.cc-stage {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  margin-top: 32px;
+}
+.demo--crystal { grid-column: 1 / span 5; }
+.demo--crystal canvas { aspect-ratio: 1 / 1.07; cursor: pointer; touch-action: pan-y; }
+.lab {
+  grid-column: 6 / span 7;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid var(--ink);
+  background: var(--paper-hi);
+}
+.lab-plot { position: relative; flex: 1; min-height: 320px; }
+.lab-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.lab .titleblock { margin-top: 0; border-left: 0; }
+.lab .titleblock > div { border-bottom: 0; }
+.lab .titleblock > div:last-child { border-right: 0; }
+.lab .titleblock dd { font-size: 17px; font-weight: 700; }
+.cc-links { display: flex; flex-wrap: wrap; column-gap: 28px; }
 
 /* ---------- systems bento ---------- */
 
@@ -997,6 +1023,8 @@ input[type="range"]:focus-visible { outline-offset: 2px; }
   .proto--merge .proto-body { grid-column: 8 / span 5; }
   .demo--mesh { grid-column: 1 / -1; }
   .mesh-log { grid-column: 1 / -1; margin-top: 16px; max-height: 220px; }
+  .demo--crystal { grid-column: 1 / span 6; }
+  .lab { grid-column: 7 / span 6; }
   .cell--game { grid-column: 1 / -1; grid-row: auto; }
   .cell--backend { grid-column: 1 / -1; }
   .cell--auto { grid-column: 1 / span 7; }
@@ -1034,8 +1062,11 @@ input[type="range"]:focus-visible { outline-offset: 2px; }
   .proto--merge .proto-demo, .proto--merge .proto-body,
   .proto--pipe .proto-demo, .proto--pipe .proto-body { grid-column: 1 / -1; }
   .proto--merge .proto-body, .proto--pipe .proto-demo { margin-top: 36px; }
-  .proto-desc, .proto--mesh .titleblock { grid-column: 1 / -1; }
-  .proto--mesh .titleblock { margin-top: 32px; }
+  .proto-desc, .proto--mesh .titleblock, .proto--crystal .proto-cols > .titleblock { grid-column: 1 / -1; }
+  .proto--mesh .titleblock, .proto--crystal .proto-cols > .titleblock { margin-top: 32px; }
+  .demo--crystal, .lab { grid-column: 1 / -1; }
+  .demo--crystal canvas { aspect-ratio: 4 / 3; }
+  .lab { margin-top: 16px; }
   .award { text-align: left; }
 
   .about-text, .about-side { grid-column: 1 / -1; }
@@ -1064,6 +1095,10 @@ input[type="range"]:focus-visible { outline-offset: 2px; }
   .demo--pipe canvas { aspect-ratio: 4 / 6.4; }
   .demo--net canvas { aspect-ratio: 4 / 4.4; }
   .titleblock, .titleblock--grid { grid-template-columns: 1fr; }
+  .demo--crystal canvas { aspect-ratio: 1 / 1.1; }
+  .lab-plot { min-height: 280px; }
+  .lab .titleblock > div { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-right: 0; }
+  .lab .titleblock > div + div { border-top: 1px solid var(--ink); }
   .cell { padding: 20px; }
   .cell--auto, .cell--front { grid-column: 1 / -1; }
   .ledger { padding: 20px 16px 8px; }
